@@ -1,3 +1,4 @@
+import com.wprotheus.retornoboleto.LeituraRetornoBancoBrasil;
 import com.wprotheus.retornoboleto.LeituraRetornoBradesco;
 import com.wprotheus.retornoboleto.ProcessarBoletos;
 

@@ -25,12 +25,12 @@ public class Boleto implements Serializable {
         sb.append(String.format("ID: %10d Banco: %3s", id, codBanco));
         if (agencia != null && !agencia.isEmpty() && contaBancaria != null && !contaBancaria.isEmpty())
             sb.append(String.format(" Ag.: %6s CC: %10s", agencia, contaBancaria));
-        sb.append(String.format(" Venc.: %s Pag.: %s Valor: %10.2f",
+        sb.append(String.format(" Venc.: %s Pag.: %s Valor: %10.2f CPF: %4s",
                 LeituraRetorno.FORMATO_DATA.format(dataVencimento),
-                LeituraRetorno.FORMATO_DATA_HORA.format(dataPagamento), valor));
-        if (multa > 0)
+                LeituraRetorno.FORMATO_DATA_HORA.format(dataPagamento), valor, cpfCliente));
+        if (multa >= 0)
             sb.append(String.format(" Multa: %10.2f", multa));
-        if (juros > 0)
+        if (juros >= 0)
             sb.append(String.format(" Juros: %10.2f", juros));
         return sb.toString();
     }

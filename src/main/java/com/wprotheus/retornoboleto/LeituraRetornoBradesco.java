@@ -18,7 +18,7 @@ public class LeituraRetornoBradesco implements LeituraRetorno {
         boleto.setContaBancaria(vetor[3]);
         boleto.setDataVencimento(LocalDate.parse(vetor[4], FORMATO_DATA));
         boleto.setDataPagamento(LocalDateTime.parse(vetor[5], FORMATO_DATA_HORA));
-        boleto.setCpfCliente(vetor[6]);
+        boleto.setCpfCliente(vetor[6].replaceAll("([0-9]{3})([0-9]{3})([0-9]{3})([0-9]{2})", "$1.$2.$3-$4"));
         boleto.setValor(Double.parseDouble(vetor[7]));
         boleto.setMulta(Double.parseDouble(vetor[8]));
         boleto.setJuros(Double.parseDouble(vetor[9]));
